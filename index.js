@@ -13,7 +13,7 @@ module.exports = function (options) {
     function one (contents, r) {
         var bundl = this;
 
-        var response = cli.executeOnText(contents, r.name).results;
+        var response = cli.executeOnText(contents, r.src[0]).results;
 
         var formatter = CLIEngine.getFormatter();
         var output = formatter(response);
