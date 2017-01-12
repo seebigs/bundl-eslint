@@ -1,6 +1,6 @@
 {
   "name": "bundl-eslint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lint your code to validate code style and prevent potential errors",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,6 @@
     "url": "https://github.com/seebigs/bundl-eslint/issues"
   },
   "dependencies": {
-    "eslint": "^2.2.0"
+    "eslint": "^3.13.1"
   }
 }
