@@ -10,7 +10,7 @@ module.exports = function (options) {
 
     var cli = new CLIEngine(options);
 
-    function eslintEach (contents, r) {
+    function one (contents, r) {
         var bundl = this;
 
         var response = cli.executeOnText(contents, r.name).results;
@@ -31,7 +31,7 @@ module.exports = function (options) {
     }
 
     return {
-        each: eslintEach
+        one: one
     };
 
 };
