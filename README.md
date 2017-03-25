@@ -25,7 +25,7 @@ bundl.task('lint', function () {
 
     return bundl('src/javascripts/*')
         .then(eslint(options))
-        .all();
+        .go();
 });
 ```
 
