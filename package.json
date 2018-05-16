@@ -4,7 +4,7 @@
   "description": "Lint your code to validate code style and prevent potential errors",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,9 @@
     "url": "https://github.com/seebigs/bundl-eslint/issues"
   },
   "dependencies": {
-    "eslint": "^3.13.1"
+    "eslint": "^4.10.0"
+  },
+  "devDependencies": {
+    "feather-test": "^4.0.0"
   }
 }

@@ -1,0 +1,4 @@
+would love to pass AST into linter, but eslint only accepts EStree format
+    maybe translate?
+        works for UglifyJS as:
+            const convertedAST = require('uglify-js').AST_Node.from_mozilla_ast(r.contents.parsed.getTree());

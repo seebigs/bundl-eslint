@@ -3,35 +3,36 @@
  */
 
 var CLIEngine = require('eslint').CLIEngine;
-
+var SourceCode = require("eslint").SourceCode;
 
 module.exports = function (options) {
     options = options || {};
 
     var cli = new CLIEngine(options);
+    var formatter = CLIEngine.getFormatter();
 
-    function one (contents, r) {
-        var bundl = this;
+    function eslint (srcFiles, done) {
+        var results = cli.executeOnFiles(srcFiles).results;
+        var output = formatter(results);
 
-        var response = cli.executeOnText(contents, r.src[0]).results;
-
-        var formatter = CLIEngine.getFormatter();
-        var output = formatter(response);
         if (output) {
-            bundl.log(output);
+            console.log(output);
         }
 
-        response.forEach(function (res) {
+        results.forEach(function (res) {
             if (res.errorCount) {
                 process.exit(0);
             }
         });
 
-        return contents;
+        if (typeof done === 'function') {
+            done();
+        }
     }
 
     return {
-        one: one
+        name: 'eslint',
+        stage: 'src',
+        exec: eslint,
     };
-
 };

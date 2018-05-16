@@ -13,19 +13,19 @@ $ npm install --save-dev bundl-eslint
 ## Configure
 
 ```js
-var bundl = require('bundl');
+var Bundl = require('bundl');
 var eslint = require('bundl-eslint');
 
-bundl.task('lint', function () {
+Bundl.task('lint', function (done) {
     var options = {
         rules: {
             "no-unused-vars": 0
         }
     };
 
-    return bundl('src/javascripts/*')
-        .then(eslint(options))
-        .go();
+    new Bundl('src/javascripts/*')
+        .src(eslint(options))
+        .go(done);
 });
 ```
 
