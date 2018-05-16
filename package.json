@@ -1,6 +1,6 @@
 {
   "name": "bundl-eslint",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Lint your code to validate code style and prevent potential errors",
   "main": "index.js",
   "scripts": {
